@@ -8,6 +8,7 @@ Pour expérimenter Green-Siege, visitez le site officiel du jeu : [https://green
 - [Documentation](./DOCUMENTATION.md)
 - [Photos du développement](https://photos.app.goo.gl/UehrKyVD4UDjgxXX9)
 - [Vidéo de GamePlay](https://youtu.be/cvqwD1WY90I)
+- [Git Original](https://github.com/Brotherta/green-siege)
 
 ## Le Concept du Jeu
 
