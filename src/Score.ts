@@ -52,7 +52,6 @@ class Score {
      * @param {number} levelName - The level number.
      */
     private async loadTopScores(levelName: number): Promise<void> {
-        console.log('loadTopScores', levelName);
         const topScoresKey = `topScores_${levelName}`;
         try {
             const data = localStorage.getItem(topScoresKey);
@@ -92,7 +91,6 @@ class Score {
      * @param {number} level - The level number.
      */
     async saveTopScore(level: number): Promise<void> {
-        console.log('saveTopScore', level);
         const topScoresKey = `topScores_${level}`;
 
         try {
@@ -101,10 +99,13 @@ class Score {
 
             // Check if the current score is in the top 100
             if (this.topScores.length < 100 || this.currentScore > this.topScores[99].score) {
+                const currentDate = new Date();
+
                 const newEntry = {
                     score: this.currentScore,
-                    timestamp:
-                        this.formatDateToFrenchStyle(new Date()) + ' ' + this.formatTimeToFrenchStyle(new Date()),
+                    timestamp: `${this.formatDateToFrenchStyle(currentDate)} ${this.formatTimeToFrenchStyle(
+                        currentDate
+                    )}`,
                 };
 
                 // Insert the new score and sort the array
