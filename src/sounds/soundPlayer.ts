@@ -38,6 +38,10 @@ export class SoundPlayer {
         }
     }
 
+    public enableLoop() {
+        this._sound.loop = true;
+    }
+
     public play(ignoreIsPlaying: boolean = false): void {
         // update distance
         // if(this._mesh !== undefined) {

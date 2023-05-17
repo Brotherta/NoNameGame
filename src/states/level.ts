@@ -65,7 +65,8 @@ export default class Level implements State {
         Game.music_green_siege.stopAndDispose();
         this._music_level = new SoundPlayer(SoundsBank.MUSIC_LEVEL, this._scene);
         this._music_level.setPosition(Game.player.getBodyPosition());
-        this._music_level.setAutoplay(true);
+        this._music_level.enableLoop();
+        this._music_level.setAutoplay(true);   
     }
 
     canbePaused(): boolean {
