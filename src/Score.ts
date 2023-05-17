@@ -56,7 +56,13 @@ class Score {
         try {
             const data = localStorage.getItem(topScoresKey);
             if (data) {
-                this.topScores = JSON.parse(data);
+                this.topScores = JSON.parse(data).map(({ score, timestamp }) => ({
+                    score,
+                    timestamp:
+                        this.formatDateToFrenchStyle(new Date(timestamp)) +
+                        ' ' +
+                        this.formatTimeToFrenchStyle(new Date(timestamp)),
+                }));
             } else {
                 this.topScores = [];
             }
@@ -101,8 +107,7 @@ class Score {
             if (this.topScores.length < 100 || this.currentScore > this.topScores[99].score) {
                 const newEntry = {
                     score: this.currentScore,
-                    timestamp:
-                        this.formatDateToFrenchStyle(new Date()) + ' ' + this.formatTimeToFrenchStyle(new Date()),
+                    timestamp: new Date().toISOString(), // Store as ISO string
                 };
 
                 // Insert the new score and sort the array
