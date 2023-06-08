@@ -61,7 +61,7 @@ export class Enemy extends Targetable implements IEnemy {
     private _sound_fuckin: SoundPlayer;
     private _sound_touched: SoundPlayer;
     private _sound_shoot: SoundPlayer;
-    private _bip_ball: SoundPlayer;
+    // private _bip_ball: SoundPlayer;
 
     // explosion
     private _explosion: BABYLON.ParticleSystem;
@@ -191,11 +191,6 @@ export class Enemy extends Targetable implements IEnemy {
         const biasedLaserDirection = laserDirection.add(randomBias).normalize();
 
         this._laser.fire(origin, biasedLaserDirection);
-        this._bip_ball = new SoundPlayer(SoundsBank.BIP_BALL, this._scene, undefined, false);
-        this._bip_ball.attachToInstancedMesh(this._laser.getInstancedMesh());
-        this._bip_ball.enableLoop();
-        this._bip_ball.setAutoplay(true);
-        console.log(this._bip_ball.isPlaying());
         this._sound_shoot.play();
     }
 
@@ -448,7 +443,7 @@ export class Enemy extends Targetable implements IEnemy {
     public dispose() {
         this._mesh.dispose();
         this._sound_bip_bip.stopAndDispose();
-        this._bip_ball.stopAndDispose();
+        // this._bip_ball.stopAndDispose();
         this._smokeParticles.dispose();
         this._laser.dispose();
     }

@@ -61,7 +61,7 @@
     },
     "bip_ball": {
         "file": "/assets/sound/bip_ball.mp3",
-        "volume": 0.03,
+        "volume": 0.15,
         "spatialized": false
     },
     "boss": {
