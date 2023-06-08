@@ -74,7 +74,8 @@ class UtilsUI {
         width: number,
         height: number,
         fontSize: number,
-        scene: BABYLON.Scene
+        scene: BABYLON.Scene,
+        color?: string
     ): GUI.MeshButton3D {
         // Create a plane mesh
         const planeMesh = BABYLON.MeshBuilder.CreatePlane(
@@ -104,7 +105,11 @@ class UtilsUI {
         // Create a text block inside the rectangle
         const textBlock = new GUI.TextBlock();
         textBlock.text = text;
-        textBlock.color = 'white';
+        if(text === "Green Siege") {  
+            textBlock.color = "#7CD511";
+        } else {
+            textBlock.color = 'white';
+        }
         textBlock.fontSize = fontSize;
         textBlock.fontWeight = 'bold';
         textBlock.textWrapping = true; // Enable text wrapping

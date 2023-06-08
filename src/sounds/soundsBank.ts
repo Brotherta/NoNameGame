@@ -10,6 +10,7 @@ export class SoundsBank {
     public static readonly GUN_RELOAD = "gun_reload";
 
     public static readonly PLAYER_HURT = "player_hurt";
+    public static readonly BIP_BALL = "bip_ball";
 
     public static readonly SHIELD_ACTIVATION = "shield_activation";
     public static readonly SHIELD_BROKEN = "shield_broken";

@@ -57,6 +57,11 @@
     "music_green_siege": {
         "file": "/assets/sound/music_green_siege.mp3",
         "volume": 0.3,
+        "spatialized": true
+    },
+    "bip_ball": {
+        "file": "/assets/sound/bip_ball.mp3",
+        "volume": 0.03,
         "spatialized": false
     },
     "boss": {
